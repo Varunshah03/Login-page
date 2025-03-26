@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f9f9f9;
+    }
+
+    .container {
+      display: flex;
+      max-width: 800px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    .form-section {
+      padding: 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .form-section h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .form-section p {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .form-section p a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .form-section p a:hover {
+      text-decoration: underline;
+    }
+
+    .form-section label {
+      font-size: 14px;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .form-section input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .form-section input:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    .form-section button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-bottom: 15px;
+    }
+
+    .form-section button:hover {
+      background-color: #0056b3;
+    }
+
+    .form-section .social-buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .form-section .social-buttons button {
+      flex: 1;
+      padding: 10px;
+      margin: 5px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .form-section .google {
+      background-color: #db4437;
+      color: white;
+    }
+
+    .form-section .facebook {
+      background-color: #4267b2;
+      color: white;
+    }
+
+    .form-section .google:hover {
+      background-color: #c33d2e;
+    }
+
+    .form-section .facebook:hover {
+      background-color: #365899;
+    }
+
+    .illustration-section {
+      background-color: #f4f7fa;
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .illustration-section img {
+      width: 100%;
+      max-width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-section">
+      <h2>Sign up with us</h2>
+      <p>Already have an account? <a href="#">Login</a></p>
+      <form id="signUpForm">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" placeholder="Your full name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="Enter your email address" required>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Create your password" required>
+
+        <button type="submit">Create Account</button>
+      </form>
+
+      <div class="social-buttons">
+        <button class="google">Google</button>
+        <button class="facebook">Facebook</button>
+      </div>
+    </div>
+
+    <div class="illustration-section">
+      <img src="pexels-rakicevic-nenad-233369-1262302 (1).jpg" alt="Illustration">
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('signUpForm').addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      const emailInput = document.getElementById('email');
+      const email = emailInput.value;
+
+      const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+      if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address.');
+      } else {
+        alert('Sign-up successful!');
+      }
+    });
+  </script>
+</body>
+</html>
